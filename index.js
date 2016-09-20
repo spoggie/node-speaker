@@ -266,7 +266,8 @@ Speaker.prototype._write = function (chunk, encoding, done) {
   function onwrite (r) {
     debug('wrote %o bytes', r);
     if (r != b.length) {
-      done(new Error('write() failed: ' + r));
+        //done(new Error('write() failed: ' + r));
+        done("issue in writing to speaker");
     } else if (left) {
       debug('still %o bytes left in this chunk', left.length);
       write();
